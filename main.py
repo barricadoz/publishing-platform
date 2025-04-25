@@ -50,8 +50,8 @@ class Base(DeclarativeBase):
     pass
 
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}"
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
@@ -270,5 +270,5 @@ def contact():
     return render_template("contact.html", current_user=current_user)
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001)
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=5001)
